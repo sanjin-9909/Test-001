@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.ShujuchakanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShujuchakanEntity" id="shujuchakanMap">
+        <result property="dapengbianhao" column="dapengbianhao"/>
+        <result property="dapengmingcheng" column="dapengmingcheng"/>
+        <result property="dapengtupian" column="dapengtupian"/>
+        <result property="dapengleixing" column="dapengleixing"/>
+        <result property="wendu" column="wendu"/>
+        <result property="shidu" column="shidu"/>
+        <result property="guangzhao" column="guangzhao"/>
+        <result property="fenxishijian" column="fenxishijian"/>
+        <result property="xinyongdaima" column="xinyongdaima"/>
+        <result property="hezuoshemingcheng" column="hezuoshemingcheng"/>
+        <result property="yichangyuanyin" column="yichangyuanyin"/>
+        <result property="nonghuzhanghao" column="nonghuzhanghao"/>
+        <result property="nonghuxingming" column="nonghuxingming"/>
+        <result property="jishuyuanzhanghao" column="jishuyuanzhanghao"/>
+        <result property="jishuyuanxingming" column="jishuyuanxingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShujuchakanVO" >
+		SELECT * FROM shujuchakan  shujuchakan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShujuchakanVO" >
+		SELECT  shujuchakan.* FROM shujuchakan  shujuchakan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShujuchakanView" >
+
+		SELECT  shujuchakan.* FROM shujuchakan  shujuchakan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShujuchakanView" >
+		SELECT * FROM shujuchakan  shujuchakan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
